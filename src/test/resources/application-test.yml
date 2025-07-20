@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:gift_api;MODE=MySQL
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    hikari:
+      connection-init-sql:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/db.changelog-master.xml
+    enabled: true
+    drop-first: true
